@@ -16,5 +16,6 @@ def hola(num):
 if __name__ == '__main__':
     print_hi('PyCharm')
     hola(4)
+    print(hola)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
