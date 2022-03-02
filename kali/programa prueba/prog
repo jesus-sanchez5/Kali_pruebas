@@ -1,0 +1,28 @@
+#!/bin/bash
+
+#Colours
+greenColour="\e[0;32m\033[1m"
+endColour="\033[0m\e[0m"
+redColour="\e[0;31m\033[1m"
+blueColour="\e[0;34m\033[1m"
+yellowColour="\e[0;33m\033[1m"
+purpleColour="\e[0;35m\033[1m"
+turquoiseColour="\e[0;36m\033[1m"
+grayColour="\e[0;37m\033[1m"
+
+
+echo -e "${yellowColour}[*] Interfaces Red [*]${endColour}\n"
+ifconfig -s | awk 'NR>1{print "\t"$1}'
+echo -e "\n${turquoiseColour}[*] Introduzca interfaz a examinar [*]${endColour}\n"
+printf "${yellowColour}[**] Interfaz: ${endColour}"
+read inter
+
+	ip_address=$(ifconfig $inter | grep "inet "| awk '{print $2}')
+	subnet=$(ifconfig $inter | grep "netmask " | awk '{print $4}')
+	ip1=$(ifconfig $inter | grep "inet " |  awk '{print $1}' FS="." | awk '{print $2}')
+	ip2=$(ifconfig $inter | grep "inet " |  awk '{print $2}' FS="." | awk '{print $1}')
+	ip3=$(ifconfig $inter | grep "inet " |  awk '{print $3}' FS="." | awk '{print $1}')
+	echo -e  "${yellowColour}\n[*] IP Address:${endColour}${blueColour} $ip_address${endColour}\t${yellowColour}Netmask:${endColour}${blueColour} $subnet${endColour}\n "
+	for i in $(seq 1 254); do
+		timeout 1 bash -c "ping -c 1 $ip1.$ip2.$ip3.$i" > /dev/null 2>&1 && echo -e "${purpleColour}\tHost $ip1.$ip2.$ip3.$i - ACTIVE${endColour}" &
+	done;wait
