@@ -1,0 +1,8 @@
+#!/bin/bash 
+
+ifconfig wlan0 up
+iwlist wlan0 scan
+iwconfig wlan0 essid ESSID key CONTRASEÑA
+dhclient wlan0
+
+chmod u+x wireless_up.sh
