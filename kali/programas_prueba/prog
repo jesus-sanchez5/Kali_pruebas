@@ -10,7 +10,18 @@ purpleColour="\e[0;35m\033[1m"
 turquoiseColour="\e[0;36m\033[1m"
 grayColour="\e[0;37m\033[1m"
 
-printf "IIIIIIII  PPPPPPPP    SSSSSSS   CCCCCCC\tAAAAAAAA  NN    NN\n   II     PP    PP   SSS       CCC\tAA    AA  NNN   NN\n   II     PPPPPPPP   SSSS      CCC\tAA    AA  NN N  NN\n   II     PP\t        SSSS   CCC\tAAAAAAAA  NN  N NN\n   II     PP\t         SSS   CCC\tAA    AA  NN   NNN\nIIIIIIII  PP\t    SSSSSSS     CCCCCCC\tAA    AA  NN    NN\n\n\n";
+echo -e "${greenColour}hola${endColour}"
+echo -e "${redColour}hola${endColour}"
+echo -e "${blueColour}hola${endColour}"
+echo -e "${yellowColour}hola${endColour}"
+echo -e "${purpleColour}hola${endColour}"
+echo -e "${turquoiseColour}hola${endColour}"
+echo -e "${grayColour}hola${endColour}"
+
+
+
+
+printf "${blueColour}IIIIIIII  PPPPPPPP    SSSSSSS   CCCCCCC\tAAAAAAAA  NN    NN\n   II     PP    PP   SSS       CCC\tAA    AA  NNN   NN\n   II     PPPPPPPP   SSSS      CCC\tAA    AA  NN N  NN\n   II     PP\t        SSSS   CCC\tAAAAAAAA  NN  N NN\n   II     PP\t         SSS   CCC\tAA    AA  NN   NNN\nIIIIIIII  PP\t    SSSSSSS     CCCCCCC\tAA    AA  NN    NN\n\n\n${endColour}";
 
 echo -e "${yellowColour}[*] Interfaces Red [*]${endColour}\n"
 ifconfig -s | awk 'NR>1{print "\t"$1}'
