@@ -105,6 +105,29 @@ echo -e "${ICyan}hola${Color_Off}"
 echo -e "${IWhite}hola${Color_Off}"
 
 
+# High Intensty Underline
+IBlack="\033[4;90m"       # Black
+IRed="\033[4;91m"         # Red
+IGreen="\033[4;92m"       # Green
+IYellow="\033[4;93m"      # Yellow
+IBlue="\033[4;94m"        # Blue
+IPurple="\033[4;95m"      # Purple
+ICyan="\033[4;96m"        # Cyan
+IWhite="\033[4;97m"       # White
+
+echo -e "HIGH INTENSITY COLORS UNDERLINERS"
+echo -e "${IBlack}hola${Color_Off}"
+echo -e "${IRed}hola${Color_Off}"
+echo -e "${IGreen}hola${Color_Off}"
+echo -e "${IYellow}hola${Color_Off}"
+echo -e "${IBlue}hola${Color_Off}"
+echo -e "${IPurple}hola${Color_Off}"
+echo -e "${ICyan}hola${Color_Off}"
+echo -e "${IWhite}hola${Color_Off}"
+
+
+
+
 # Bold High Intensty
 BIBlack="\033[1;90m"      # Black
 BIRed="\033[1;91m"        # Red
