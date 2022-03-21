@@ -22,5 +22,5 @@ if __name__=='__main__':
     print ('Estoy en el main')
     sistemaOP()
     if (sistema == 'Windows'):
-        #pingwindows()
-        print ("Hola")
+        pingwindows()
+       
