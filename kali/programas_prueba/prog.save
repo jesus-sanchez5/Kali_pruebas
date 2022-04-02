@@ -28,8 +28,12 @@ read inter
 	total=0
 
 	for i in $(seq 1 254); do
+		if bash -c ping -c 1 $ip1.$ip2.$ip3.$i > /dev/null 2>&1 &
+		then
+		echo "hiii"
+		fi
 
-		bash -c "ping -c 1 $ip1.$ip2.$ip3.$i" > /dev/null 2>&1 && echo -e  "${purpleColour}\tHost $ip1.$ip2.$ip3.$i - ACTIVE  ${endColour}"  &
+		bash -c "ping -c 1 $ip1.$ip2.$ip3.$i" > /dev/null 2>&1 && echo -e  "${purpleColour}\t - Host $ip1.$ip2.$ip3.$i - ACTIVE  ${endColour}\n" $((total+1))  &
 
 	done;wait
 echo -e  "\n${purpleColour}Total dispositivos: $total${endColour}"

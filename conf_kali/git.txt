@@ -1,0 +1,18 @@
+Actualizar ramas eliminadas
+git fetch --prune
+
+
+actualizar 
+git pull
+
+
+subir cambios
+git add .
+git status
+git commit -m "COMENTARIO"
+git push origin master
+
+
+
+
+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
