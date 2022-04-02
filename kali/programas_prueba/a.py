@@ -10,7 +10,7 @@ def sistemaOP():
     print ("Sistema operativo: ", sistema)
 
 def pingwindows(): 
-    a = system('ping -n 4 172.19.131.130 | find "recibidos = 0"')
+    a = subprocess.run('ping -n 4 192.168.1.1"')
     print (a)
    
 
