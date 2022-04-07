@@ -131,6 +131,10 @@ function mkt(){
 	mkdir {nmap,content,scripts,tmp,exploits}
 }
 
+function up2(){
+	sudo apt-get update && sudo apt-get full-upgrade && sudo apt-get autoremove
+}
+
 function extractPorts(){
 
 	echo -e "\n${yellowColour}[*] Extrayendo informacion..${endColour} \n"
