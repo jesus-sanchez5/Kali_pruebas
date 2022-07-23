@@ -7,5 +7,5 @@ int main(){
 	system("/usr/bin/ps");
 	printf("\n\n Listado procesos (ps)\n\n");
 	system("ps");
-	system("ping 8.8.8.8");
+	system("ping -c 1 8.8.8.8");
 }
