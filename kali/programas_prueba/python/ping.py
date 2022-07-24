@@ -1,9 +1,7 @@
 from concurrent.futures import process
-import re, sys, subprocess
+import re, sys, subprocess, os
 
 
 if __name__ == '__main__':
-	ip="8.8.8.8"
-	proc = subprocess.Popen(["ping -c 1 %s" % ip, ""], stdout= subprocess.PIPE, shell=True)
-	print(proc.communicate())
+	os.system('ping -c 3 8.8.8.8 | grep bytes | awk "{print $2}" ')
    

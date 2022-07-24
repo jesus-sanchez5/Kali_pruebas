@@ -9,7 +9,6 @@ if len(sys.argv) != 2:
 def get_ttl(ip_address):
 	proc = subprocess.Popen(["/usr/bin/ping -c 1 %s" % ip_address, ""], stdout= subprocess.PIPE, shell=True)
 	(out,err) = proc.communicate()
-
 	out = out.split()
 	out = out[12].decode('utf-8')
 	ttl_value = re.findall(r"\d{1,3}", out)[0]
