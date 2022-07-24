@@ -3,5 +3,5 @@ import re, sys, subprocess, os
 
 
 if __name__ == '__main__':
-	os.system('ping -c 3 8.8.8.8 | grep bytes | awk "{print $2}" ')
+	os.system('ping -c 3 8.8.8.8 | grep bytes ')
    
