@@ -7,7 +7,7 @@ if len(sys.argv) != 2:
 	sys.exit(1)
 
 def get_ttl(ip_address):
-	proc = subprocess.Popen(["/usr/bin/ping -c 1 %s" % ip_address, ""], stdout= subprocess.PIPE, shell=True)
+	proc = subprocess.Popen(["ping -c 1 %s" % ip_address, ""], stdout= subprocess.PIPE, shell=True)
 	(out,err) = proc.communicate()
 	out = out.split()
 	out = out[12].decode('utf-8')
@@ -26,8 +26,7 @@ def get_os(ttl):
 		return "Not found"
 
 if __name__ == '__main__':
-
-
+	print('Analizando IP')
 	ip_address = sys.argv[1]
 	ttl = get_ttl(ip_address)
 	os_name = get_os(ttl)
