@@ -1,8 +1,3 @@
-# from plyer import notification
-# notification.notify(title='Noti',message='holaaaa',app_icon=None,timeout=20)
-
-
-
 # import os
 
 # def notify(title, text):
@@ -11,6 +6,8 @@
             #   """.format(text, title))
 
 # notify("Title", "Heres an alert")
+
+
 
 
 import psutil, os
