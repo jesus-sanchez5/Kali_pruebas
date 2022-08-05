@@ -5,7 +5,7 @@ import re, sys, subprocess, os
 a=[]
 
 if __name__ == '__main__':
-	a[1]=os.system("ifconfig -s | awk 'NR>1{print $1}'")
+	a.append(os.system("ifconfig -s | awk 'NR>1{print $1}'"))
    
 
 
