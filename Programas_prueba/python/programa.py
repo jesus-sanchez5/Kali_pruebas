@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 from concurrent.futures import process
-import re, sys, subprocess, os
+import re, sys, subprocess, os, time
 
 interfaces=[]
 respuesta = ""
@@ -35,8 +35,9 @@ def elegirInterfaz():
             subprocess.Popen(["sudo ifconfig %s up" % inter, ""], stdout= subprocess.PIPE, shell=True)
             print("\nInterfaz modo monitor\n")
             os.system('iwconfig '+inter) 
+            time.sleep(3)
             os.system('sudo airodump-ng '+inter)
-            inter = input()
+            
     else:
         print("No existe esta interfaz")
 
