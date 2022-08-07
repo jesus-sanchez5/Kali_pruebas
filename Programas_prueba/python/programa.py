@@ -35,6 +35,8 @@ def elegirInterfaz():
             subprocess.Popen(["sudo ifconfig %s up" % inter, ""], stdout= subprocess.PIPE, shell=True)
             print("\nInterfaz modo monitor\n")
             os.system('iwconfig '+inter) 
+            os.system('sudo airodump-ng '+inter)
+            inter = input()
     else:
         print("No existe esta interfaz")
 
