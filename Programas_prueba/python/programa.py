@@ -30,7 +30,7 @@ def elegirInterfaz():
         respuesta = input()   
         if respuesta == 'Y' or respuesta =='y' or respuesta == 'yes' or respuesta == 'Yes':
             subprocess.Popen(["sudo airmon-ng check kill", ""], stdout= subprocess.PIPE, shell=True)
-            subprocess.Popen(["sudo ifconfig '+{inter}+' down ", ""], stdout= subprocess.PIPE, shell=True)
+            subprocess.Popen(["sudo ifconfig %s down " % inter, ""], stdout= subprocess.PIPE, shell=True)
             
             """ os.system('sudo airmon-ng check kill')
             os.system('sudo ifconfig '+inter+' down ')
