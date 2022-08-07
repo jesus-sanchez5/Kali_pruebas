@@ -30,7 +30,7 @@ def elegirInterfaz():
         respuesta = input()   
         if respuesta == 'Y':
             print()
-            os.system('sudo ifconfig '+{respuesta} +' down ')
+            os.system('sudo ifconfig '+respuesta+' down ')
     else:
         print("No existe esta interfaz")
 
