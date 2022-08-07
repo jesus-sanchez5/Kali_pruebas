@@ -29,13 +29,15 @@ def elegirInterfaz():
         print("Interfaz en lista, ¿activar modo monitor? (Y/n):")
         respuesta = input()   
         if respuesta == 'Y' or respuesta =='y' or respuesta == 'yes' or respuesta == 'Yes':
-            print()
-            os.system('sudo airmon-ng check kill')
+            subprocess.Popen(["sudo airmon-ng check kill", ""], stdout= subprocess.PIPE, shell=True)
+            subprocess.Popen(["sudo ifconfig '+{inter}+' down ", ""], stdout= subprocess.PIPE, shell=True)
+            
+            """ os.system('sudo airmon-ng check kill')
             os.system('sudo ifconfig '+inter+' down ')
             os.system('sudo airmon-ng check kill')
             os.system('sudo iwconfig '+inter+' mode monitor')
             os.system('sudo ifconfig '+inter+' up')
-            os.system('iwconfig '+inter)
+            os.system('iwconfig '+inter) """
     else:
         print("No existe esta interfaz")
 
