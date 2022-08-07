@@ -33,8 +33,9 @@ def elegirInterfaz():
             os.system('sudo airmon-ng check kill')
             os.system('sudo ifconfig '+inter+' down ')
             os.system('sudo airmon-ng check kill')
-            os.system('iwconfig '+inter+' mode monitor')
-            os.system('ifconfig '+inter+' up')
+            os.system('sudo iwconfig '+inter+' mode monitor')
+            os.system('sudo ifconfig '+inter+' up')
+            os.system('iwconfig')
     else:
         print("No existe esta interfaz")
 
