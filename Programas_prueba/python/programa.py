@@ -31,6 +31,7 @@ def elegirInterfaz():
             subprocess.Popen(["sudo ifconfig %s down " % inter, ""], stdout= subprocess.PIPE, shell=True)
             subprocess.Popen(["sudo airmon-ng check kill", ""], stdout= subprocess.PIPE, shell=True)
             subprocess.Popen(["sudo iwconfig %s mode monitor" % inter, ""], stdout= subprocess.PIPE, shell=True)
+            os.system('sudo iwconfig '+inter+' mode monitor')
             subprocess.Popen(["sudo ifconfig %s up" % inter, ""], stdout= subprocess.PIPE, shell=True)
             print("\nInterfaz modo monitor\n")
             os.system('iwconfig '+inter) 
