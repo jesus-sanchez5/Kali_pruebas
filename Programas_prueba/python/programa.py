@@ -30,6 +30,7 @@ def elegirInterfaz():
         respuesta = input()   
         if respuesta == 'Y':
             print()
+            os.system('sudo airmon-ng check kill')
             os.system('sudo ifconfig '+inter+' down ')
             os.system('sudo airmon-ng check kill')
             os.system('iwconfig '+inter+' mode monitor')
