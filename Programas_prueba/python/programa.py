@@ -15,9 +15,9 @@ def obtenerInterfaces():
     #print(out)
     print(f"Interfaces:")
     for salida in out:
-    	interfaces.append(out[x].decode('utf-8'))
+        interfaces.append(out[x].decode('utf-8'))
         print(f"{x} - {interfaces[x]}")    	
-    	x+=1
+        x+=1
     
     print()
     
