@@ -11,7 +11,7 @@ def obtenerInterfaces():
     proc = subprocess.Popen(["ifconfig -s | awk 'NR>1{print $1}'", ""], stdout= subprocess.PIPE, shell=True)
     (out,err) = proc.communicate()
     out = out.split()
-    pattern = r'\w+'
+    #pattern = r'\w+'
     #print(out)
     print(f"Interfaces:")
     for salida in out:
