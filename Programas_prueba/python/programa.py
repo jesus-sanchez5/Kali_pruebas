@@ -3,7 +3,7 @@ from concurrent.futures import process
 import re, sys, subprocess, os
 
 interfaces=[]
-
+respuesta = ""
 
 def obtenerInterfaces():
     print("[*][*] Obteneniendo Interfaces [*][*]")
@@ -23,17 +23,22 @@ def obtenerInterfaces():
     
     
 def elegirInterfaz():
-	print("[*][*] Elige una interfaz: ", end="")
-	inter = input()
-	if inter in interfaces:
-		print("Interfaz en lista")
-	else:
-		print("No existe esta interfaz")
+    print("[*][*] Elige una interfaz: ", end="")
+    inter = input()
+    if inter in interfaces:
+        print("Interfaz en lista, ¿activar modo monitor? (Y/n):")
+        respuesta = input()   
+        if respuesta == 'Y':
+            print()
+            os.system('sudo ifconfig "+{respuesta} +" down ')
+    else:
+        print("No existe esta interfaz")
 
 if __name__ == '__main__':
-	obtenerInterfaces()
-	elegirInterfaz()
+    obtenerInterfaces()
+    elegirInterfaz()
     
+   
    
 
 
