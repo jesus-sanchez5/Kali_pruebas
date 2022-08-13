@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 from concurrent.futures import process, thread
-import re, sys, subprocess, os, time, threading
+import re, sys, subprocess, os, time, threading, signal
 
 interfaces  =[]
 respuesta = ""
