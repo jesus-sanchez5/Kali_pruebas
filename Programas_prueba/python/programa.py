@@ -2,9 +2,9 @@
 from concurrent.futures import process, thread
 import re, sys, subprocess, os, time, threading
 
-interfaces=[]
+interfaces  =[]
 respuesta = ""
-inter = ""
+inter = []
 
 def obtenerInterfaces():
     print("[*][*] Obteneniendo Interfaces [*][*]")
@@ -42,7 +42,7 @@ def modoMonitor():
     else:
         print("No existe esta interfaz")
 
-def escanearRedes():
+def escanearRedes(inter):
     print("Vamos a escanear redes")
     print("INTerd" + inter)
     os.system('sudo airodump-ng '+inter)
