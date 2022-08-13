@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-from concurrent.futures import process
-import re, sys, subprocess, os, time
+from concurrent.futures import process, thread
+import re, sys, subprocess, os, time, threading
 
 interfaces=[]
 respuesta = ""
+inter = ""
 
 def obtenerInterfaces():
     print("[*][*] Obteneniendo Interfaces [*][*]")
@@ -20,7 +21,7 @@ def obtenerInterfaces():
     print()
     
     
-def elegirInterfaz():
+def modoMonitor():
     print("[*][*] Elige una interfaz: ", end="")
     inter = input()
     if inter in interfaces:
@@ -36,14 +37,26 @@ def elegirInterfaz():
             print("\nInterfaz modo monitor\n")
             os.system('iwconfig '+inter) 
             time.sleep(3)
-            os.system('sudo airodump-ng '+inter)
+           
             
     else:
         print("No existe esta interfaz")
 
+def escanearRedes():
+    print("Vamos a escanear redes")
+    os.system('sudo airodump-ng '+inter)
+    
+    
+    
 if __name__ == '__main__':
     obtenerInterfaces()
-    elegirInterfaz()
+    modoMonitor()
+    timer_runs= threading.Event()
+    timer_runs.set()
+    t = threading.Thread(target=escanearRedes)
+    t.start()
+    time.sleep(10)
+    timer_runs.clear()
     
    
    
