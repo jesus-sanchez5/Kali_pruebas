@@ -44,6 +44,7 @@ def modoMonitor():
 
 def escanearRedes():
     print("Vamos a escanear redes")
+    print("INTerd" + inter)
     os.system('sudo airodump-ng '+inter)
     
     
