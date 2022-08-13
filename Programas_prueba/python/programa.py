@@ -44,20 +44,24 @@ def modoMonitor():
 
 def escanearRedes():
     print("Vamos a escanear redes")
-    print(inter)
-    os.system('sudo airodump-ng '+inter)
+    print("Tiempo de escaneo:", end="")
+    os.system('sudo airodump-ng wlan0')
+    tiempo = 10
+    signal.signal()
+    while tiempo:    
+        m, s = divmod(tiempo, 60)
+        min_sec_format = '{:02d}:{:02d}'.format(m, s)
+        #print(min_sec_format)
+        time.sleep(1)
+        tiempo -= 1
+    signal.SIGINT()
     
     
     
 if __name__ == '__main__':
     obtenerInterfaces()
     modoMonitor()
-    timer_runs= threading.Event()
-    timer_runs.set()
-    t = threading.Thread(target=escanearRedes)
-    t.start()
-    time.sleep(10)
-    timer_runs.clear()
+    escanearRedes()
     
    
    
