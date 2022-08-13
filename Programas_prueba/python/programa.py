@@ -4,7 +4,7 @@ import re, sys, subprocess, os, time, threading
 
 interfaces  =[]
 respuesta = ""
-inter = ""
+global inter 
 
 def obtenerInterfaces():
     print("[*][*] Obteneniendo Interfaces [*][*]")
@@ -44,7 +44,7 @@ def modoMonitor():
 
 def escanearRedes():
     print("Vamos a escanear redes")
-    print(interfaces)
+    print(inter)
     os.system('sudo airodump-ng '+inter)
     
     
