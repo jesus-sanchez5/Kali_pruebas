@@ -3,7 +3,7 @@
 import subprocess, re, sys
 
 #ping -c 1 ipp
-whichsystem.py 
+#whichsystem.py 
 
 def return_ttl(address):
 	proc = subprocess.Popen(["ping -c 1 %s" %address,""],stdout=subprocess.PIPE, shell=True)

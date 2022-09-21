@@ -55,7 +55,9 @@ def escanearRedes():
         time.sleep(1)
         tiempo -= 1
     signal.SIGINT()
-    
+    proc = subprocess.Popen(["sudo airodump-ng wlan0", ""], stdout= subprocess.PIPE, shell=True)
+    (out,err) = proc.communicate()
+    out = out.split()
     
     
 if __name__ == '__main__':
