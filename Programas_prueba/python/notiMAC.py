@@ -8,8 +8,6 @@
 # notify("Title", "Heres an alert")
 
 
-
-
 import psutil, os
 battery = psutil.sensors_battery()
 percentage = battery.percent
