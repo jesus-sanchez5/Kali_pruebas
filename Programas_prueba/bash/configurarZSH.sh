@@ -6,7 +6,7 @@ chsh -s $(which zsh)
 
 sudo apt install git curl -y
 
-wget https://www.xataka.com/https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 
 sh install.sh
 
