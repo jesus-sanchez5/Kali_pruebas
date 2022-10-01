@@ -8,6 +8,7 @@ def ayuda():
     
 def dependencias():
     print("Dependencias")
+    print("👋 Howdy")
     
     
 ayuda()
